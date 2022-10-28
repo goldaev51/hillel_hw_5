@@ -26,7 +26,7 @@ class Product(models.Model):
 
 class Provider(models.Model):
     name = models.CharField(max_length=60, help_text='Enter provider name')
-    city = models.OneToOneField("City", on_delete=models.CASCADE)
+    city = models.OneToOneField("City", on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.name
