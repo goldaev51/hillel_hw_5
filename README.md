@@ -1,22 +1,27 @@
-# hillel_hw_5
-## Описание домашки
-Инициализоровать новый django проект с последней версией django:
+# hillel_hw_8
+## Description
+Implement models in the application that use OneToOneField, ForeignKey, ManyToManyField fields.
+Use graph_models from django-extensions to display the model structure of ONLY this application.
 
-зайти в папку репозитория
+--------
 
-django-admin startproject <project_name> .
-(точка в конце - путь куда положить файлы проекта, в данном случае - текущая папка)
+## Launch
+* clone current repository
+* pip install -r requirements.txt
+* python manage.py makemigrations
+* python manage.py migrate
+* python manage.py loaddata db.json
+* python manage.py shell_plus --print-sql
+* Test db with django orm
 
-В .gitignore не забыть добавить (удостовериться в наличии) файл базы данных, папку виртульаного окружения (если она в
-папке проекта) и папку настроект среды разработки
+--------
 
-Создать requirements.txt (или Pipfile + Pipfile.lock в зависимости от используемого)
+## Realized
 
-Создать django приложение catalog (python manage.py startapp <app_name>) и добавить его в INSTALLED_APPS
-
-Убедиться что SECRET_KEY будет взят из переменных окружения и НЕ будет храниться в репозитории (os.environ.get("
-SECRET_KEY", "<def value>"))
-
-
-# Реализовано
-Создан django проект с названием core, создано приложение catalog и доавленно в INSTALLED_APPS. Secret key берется из env. 
+1. Created tables City,Provider,Client,Product![](static/myapp_models.png)
+2. Get provider's city![](static/get_provider_city.png)
+3. Get city's provider![](static/get_city_provider.png)
+4. Get city's clients![](static/get_city_clients.png)
+5. Get client's city![](static/get_client_city.png)
+6. Get client's products![](static/get_client_product.png)
+7. Get product's clients![](static/get_product_client.png)
