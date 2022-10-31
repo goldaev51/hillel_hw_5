@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+
+{% block content %}
+    <h1>Person Info</h1>
+
+    <form action="{% url 'forms:person-info' form.instance.pk %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="submit" value="Submit">
+    </form>
+{% endblock %}
