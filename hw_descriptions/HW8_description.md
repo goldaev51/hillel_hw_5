@@ -18,10 +18,10 @@ Use graph_models from django-extensions to display the model structure of ONLY t
 
 ## Realized
 
-1. Created tables City,Provider,Client,Product![](../static/myapp_models.png)
-2. Get provider's city![](../static/get_provider_city.png)
-3. Get city's provider![](../static/get_city_provider.png)
-4. Get city's clients![](../static/get_city_clients.png)
-5. Get client's city![](../static/get_client_city.png)
-6. Get client's products![](../static/get_client_product.png)
-7. Get product's clients![](../static/get_product_client.png)
+1. Created tables City,Provider,Client,Product<br />![](../static/myapp_models.png)
+2. Get provider's city<br />![](../static/get_provider_city.png)
+3. Get city's provider<br />![](../static/get_city_provider.png)
+4. Get city's clients<br />![](../static/get_city_clients.png)
+5. Get client's city<br />![](../static/get_client_city.png)
+6. Get client's products<br />![](../static/get_client_product.png)
+7. Get product's clients<br />![](../static/get_product_client.png)

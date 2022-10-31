@@ -1,8 +1,39 @@
 import math
 
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
+from django.views import generic
 
-from .forms import TriangleForm
+from .forms import PersonForm, TriangleForm
+from .models import Person
+
+
+class PersonListView(generic.ListView):
+    model = Person
+    paginate_by = 10
+
+
+def person(request):
+    if request.method == 'POST':
+        form = PersonForm(request.POST)
+        if form.is_valid():
+            obj = form.save()
+            return redirect('forms:person-info', obj.id)
+    else:
+        form = PersonForm()
+    return render(request, 'forms/person_create.html', {'form': form})
+
+
+def person_info(request, pk):
+    person_data = get_object_or_404(Person, pk=pk)
+    if request.method == 'POST':
+        form = PersonForm(request.POST, instance=person_data)
+        if form.is_valid():
+            obj = form.save()
+            return redirect('forms:person-info', obj.id)
+    else:
+        form = PersonForm(instance=person_data)
+
+    return render(request, 'forms/person_info.html', {'form': form})
 
 
 def triangle(request):
