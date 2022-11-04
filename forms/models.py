@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 class Logs(models.Model):
     path = models.CharField(max_length=200, null=False, blank=False)
-    timestamp = models.DateTimeField(auto_now=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
     get_data = models.JSONField(null=False, blank=False)
     post_data = models.JSONField(null=False, blank=False)
 
